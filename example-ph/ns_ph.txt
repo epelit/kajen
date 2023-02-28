@@ -1,0 +1,4 @@
+ns2.cuhk.edu.hk.
+ph.communitydns.net.
+ns4.apnic.net.
+1.ns.ph.

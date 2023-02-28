@@ -1,0 +1,12 @@
+ns2.cuhk.edu.hk. v4: 137.189.6.21
+ns2.cuhk.edu.hk. v6: 2405:3000:3:6::15
+
+ph.communitydns.net. v4: 194.0.1.23
+ph.communitydns.net. v6: 2001:678:4::17
+
+ns4.apnic.net. v4: 202.12.31.53
+ns4.apnic.net. v6: 2001:dd8:12::53
+
+1.ns.ph. v4: 206.51.255.1
+1.ns.ph. v6: 2620:171:805:ad2:7068::1
+

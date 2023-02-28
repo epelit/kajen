@@ -1,0 +1,30 @@
+#shell scripts to gather data for kajen
+
+#!/bin/bash
+
+# read list of ccltd from file and query dns resolver for authoratative name server
+# results are exported to file
+cat cctld.txt | while read cc
+do
+    ans=`dig $cc ns +short`
+    if [[ $ans != null ]]
+        then
+        echo $ans >> cctld-ns.txt
+    fi
+done
+
+# cat cctld.txt | tr " " "\n" >> cctld_ns_fqdn.txt
+ 
+# get list of authoratative name servers for ph domain
+dig ph ns +short > ns_ph.txt
+
+# display v4 and v6 records for ph domain authoritative name servers
+for c in `head -n5 ns_ph.txt`; do echo -n "$c v4: " ; dig a $c +short; echo -n "$c v6: "; dig aaaa $c +short; echo; done
+
+# use ripe atlas command line tools to get working dual stack probes in the philippines
+./ripe-atlas probe-search --country ph --status 1 --tag system-ipv6-works --tag system-ipv4-works
+
+
+# login to ripe atlas and create ping and traceroute measurements from PH dual stack probes to ccTLD (both ipv4 and ipv6)
+
+# get api link from measurements ui (ripe atlas https://atlas.ripe.net/measurements)

@@ -1,0 +1,14 @@
+README
+
+This is a submission for APRICOT 2023 Hackathon for Team KAJEN.
+
+The tool was created for team KAJEN and the main purpose is to measure and analyze IPV4 and IPV6 route symmetry to ccTLD using dual stack ATLAS RIPE probes.
+
+The shell script reads country ccTLD from a file, fetches the Authoritative Name Servers and writes these items to a file.
+
+Using the ripe atlas command line tools and application program interface (API) you can fetch the dual stack probes in a certain location.
+
+A PHP script will then fetch measurements from RIPE ATLAS (ping and traceroute) to ccTLD name servers and generate a table.
+
+NOTE: The measurements were created using the UI (https://atlas.ripe.net/measurements) but can be scripted if you have appropriate key and permissions.
+
